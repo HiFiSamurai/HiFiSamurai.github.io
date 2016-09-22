@@ -6,11 +6,91 @@
         <link rel="shortcut icon" href="favicon.png"/>
         <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <title>Maynard Russell</title>
+        <style>
+            * {
+                font-family: 'Didact Gothic', sans-serif;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            header {
+                margin-bottom: 30px;
+                padding-bottom: 5px;
+                position: relative;
+            }
+
+            header * {
+                margin: 0;
+                animation: slide-in 600ms;
+            }
+
+            header * + * {
+                animation: slide-in 800ms;
+            }
+
+            header::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                height: 2px;
+                width: 100%;
+                background-color: #333;
+                right: 0;
+                animation: border-in 900ms;
+            }
+
+            .contentBox {
+                max-width: 400px;
+                display: table;
+                margin: 30px auto;
+            }
+
+            .contentBox a {
+                display: block;
+                margin: 15px 0;
+                padding: 10px 15px;
+                border: 2px solid #333;
+                color: #333;
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: color 0.2s, background-position 0.2s;
+                background: linear-gradient(to bottom, #333 50%, #FFF 50%);
+                background-size: 100% 200%;
+                background-position:left bottom;
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .contentBox a:hover {
+                color: #FFF;
+                background-position: left top;
+            }
+
+            @keyframes slide-in {
+            	0%      { opacity: 0; transform: translateX(30px); }
+            	100%    { opacity: 1; transform: translateX(0); }
+            }
+
+            @keyframes border-in {
+                0%      { opacity: 0; width: 0; }
+            	100%    { opacity: 1; width: 100%; }
+            }
+
+        </style>
     </head>
     <body>
-        <div class="linkBox">
-            <a href="/design-gallery">Gallery</a>
-            <a href="/lexicography">Lexicography</a>
+        <div class="contentBox">
+            <header>
+                <h2>Maynard Russell</h2>
+                <h3>Interface Engineer</h3>
+            </header>
+            <a href="resume.pdf" target="_blank">Resume</a>
+            <a href="/design-gallery" target="_blank">Design Gallery</a>
+            <a href="/lexicography" target="_blank">Lexicography</a>
         </div>
     </body>
 </html>
