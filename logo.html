@@ -4,68 +4,12 @@
         <meta http-equiv='X-UA-Compatible' content='IE=8; IE=10; chrome=1' />
         <meta http-equiv='content-type' content='text-html; charset=utf-8' />
         <link rel="shortcut icon" href="favicon.png"/>
-        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <title>Maynard Russell</title>
         <style>
-            * {
-                font-family: 'Didact Gothic', sans-serif;
-                text-rendering: optimizeLegibility;
-                -webkit-font-smoothing: antialiased;
-            }
-
-            header {
-                margin-bottom: 30px;
-                padding-bottom: 5px;
-                position: relative;
-                text-align: center;
-            }
-
-            header * {
-                margin: 0;
-                animation: slide-in 900ms;
-            }
-
-            .contentBox {
-                max-width: 400px;
-                display: table;
-                margin: 30px auto;
-            }
-
-            .contentBox a {
-                display: block;
-                margin: 15px 0;
-                padding: 10px 15px;
-                border: 2px solid #333;
-                color: #333;
-                text-align: center;
-                text-transform: uppercase;
-                text-decoration: none;
-                transition: color 0.2s, background-position 0.2s;
-                background: linear-gradient(to bottom, #333 50%, #FFF 50%);
-                background-size: 100% 200%;
-                background-position:left bottom;
-                -moz-user-select: -moz-none;
-                -khtml-user-select: none;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-
-            .contentBox a:hover {
-                color: #FFF;
-                background-position: left top;
-            }
-
-            @keyframes slide-in {
-            	0%      { opacity: 0; transform: translateY(30px); }
-            	100%    { opacity: 1; transform: translateY(0); }
-            }
-
-            /* MAIN LOGO */
             .hfs-logo {
                 position: relative;
-                display: table;
-                margin: 0 auto 15px;
+                display: inline-block;
             }
             .hfs-circle {
                 width: 80px;
@@ -117,13 +61,13 @@
 
             /* Stage 2 - Draw line */
             .hfs-lines::before {
-                animation-delay: 600ms;
+                animation-delay: 800ms;
                 animation-duration: 600ms;
             }
 
             /* Stage 3 - Rotate to fill */
             .hfs-lines::after, .hfs-circle::before {
-                animation-delay: 1200ms;
+                animation-delay: 1600ms;
                 animation-duration: 800ms;
             }
 
@@ -138,7 +82,7 @@
                 100%   { transform: rotateZ(45deg); }
             }
 
-            @keyframes line-draw {
+            @keyframes line-draw{
                 0%     { transform: scaleX(0); opacity: 1; }
                 100%   { transform: scale(1); opacity: 1; }
             }
@@ -150,18 +94,9 @@
         </style>
     </head>
     <body>
-        <div class="contentBox">
-            <div class="hfs-logo">
-                <div class="hfs-circle"></div>
-                <div class="hfs-lines"></div>
-            </div>
-            <header>
-                <h2>Maynard Russell</h2>
-                <h4>Interface Engineer</h4>
-            </header>
-            <a href="resume.pdf" target="_blank">Resume</a>
-            <a href="/Design-Gallery" target="_blank">Design Gallery</a>
-            <a href="/lexicography" target="_blank">Lexicography</a>
+        <div class="hfs-logo">
+            <div class="hfs-circle"></div>
+            <div class="hfs-lines"></div>
         </div>
     </body>
 </html>
