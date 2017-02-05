@@ -27,20 +27,20 @@
             }
 
             .contentBox {
-                width: 500px;
+                width: 350px;
                 display: table;
                 margin: 30px auto 0;
             }
 
             .contentBox .section {
                 display: block;
-                height: 45px;
-                width: 180px;
+                width: 100%;
                 box-sizing: border-box;
                 margin: 15px auto;
                 padding: 10px 15px;
                 border: 2px solid #333;
-                transition: width 0.6s, height 0.6s;
+                transition: background-color 600ms;
+                transition-delay: 100ms;
                 -moz-user-select: -moz-none;
                 -khtml-user-select: none;
                 -webkit-user-select: none;
@@ -50,43 +50,37 @@
             }
 
             .contentBox .section:hover {
-                width: 100%;
-                height: 180px;
+                background-color: #333;
+            }
+
+            .contentBox .section:hover * {
+                color: #FFF !important;
             }
 
             .contentBox .section .label {
                 color: #333;
+                transition: color 600ms;
                 text-transform: uppercase;
                 display: block;
+                text-align: center;
             }
 
             .contentBox .section .description {
+                max-height: 0;
                 opacity: 0;
-                transition: opacity 300ms;
-                pointer-events: none;
+                overflow: hidden;
+                transition: opacity 600ms, max-height 600ms;
             }
 
             .contentBox .section:hover .description {
-                transition-delay: 300ms;
+                max-height: 150px;
                 opacity: 1;
-            }
-
-            .contentBox .section .description {
-                display: flex;
-            }
-
-            .contentBox .section .description .wrapper {
-                width: 120px;
-                margin: 15px 30px 0 0;
-            }
-
-            .contentBox .section .description .wrapper .thumbnail {
-                width: 100%;
             }
 
             .contentBox .section .description .summary {
                 color: #666;
-                margin-top: 8px;
+                margin: 5px 0;
+                text-align: center;
             }
 
             @keyframes slide-in {
@@ -195,36 +189,24 @@
             <a class="section" href="/Design-Gallery" target="_blank">
                 <span class="label">Design Gallery</span>
                 <div class="description">
-                    <div class="wrapper">
-                        <img class="thumbnail" src="img/gallery.png" alt="Design Gallery">
-                    </div>
                     <p class="summary">A collection of widgets and interface components, utilizing experimental HTML and CSS techniques</p>
                 </div>
             </a>
             <a class="section" href="/lexicography" target="_blank">
                 <span class="label">Lexicography</span>
                 <div class="description">
-                    <div class="wrapper">
-                        <img class="thumbnail" src="img/lexicography.png" alt="Lexicography">
-                    </div>
                     <p class="summary">A visualization of untranslatable words for various languages which relate to wellness and positive emotions</p>
                 </div>
             </a>
             <a class="section" href="//medium.com/@TheHiFiSamurai/" target="_blank">
                 <span class="label">Observations</span>
                 <div class="description">
-                    <div class="wrapper">
-                        <img class="thumbnail" src="img/blog.png" alt="Blog">
-                    </div>
                     <p class="summary">An ongoing series of essays exploring the role of technology within society and its' effect on the human psyche</p>
                 </div>
             </a>
             <a class="section" href="resume.pdf" target="_blank">
                 <span class="label">Curriculum Vitae</span>
                 <div class="description">
-                    <div class="wrapper">
-                        <img class="thumbnail" src="img/resume.png" alt="Resume">
-                    </div>
                     <p class="summary">General summary of qualifications and work experience within the field of computer engineering</p>
                 </div>
             </a>
