@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta http-equiv='X-UA-Compatible' content='IE=8; IE=10; chrome=1' />
+        <meta http-equiv='content-type' content='text-html; charset=utf-8' />
+        <link rel="shortcut icon" href="favicon.png"/>
+        <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+        <title>Maynard Russell</title>
+        <style>
+            .hfs-logo {
+                position: relative;
+                display: inline-block;
+            }
+            .hfs-circle {
+                width: 80px;
+                height: 80px;
+                border: 2px solid #333;
+                border-radius: 50%;
+                margin: 0 15px;
+                background-color: white;
+                background-image: linear-gradient(to bottom, transparent 50%, #333 0);
+                animation: circle-grow;
+                animation-fill-mode: forwards;
+            }
+            .hfs-circle::before {
+                content: "";
+                display: block;
+                margin-left: 50%;
+                height: 100%;
+                border-radius: 0 100% 100% 0 / 50%;
+                background-color: inherit;
+                transform-origin: left;
+                transform: rotateZ(90deg);
+                animation: circle-fill;
+                animation-fill-mode: forwards;
+            }
+            .hfs-lines::before, .hfs-lines::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: #333;
+                position: absolute;
+                top: 50%;
+                margin-top: -1px;
+                opacity: 0;
+            }
+            .hfs-lines::before {
+                animation: line-draw;
+                animation-fill-mode: forwards;
+                transform-origin: left;
+            }
+            .hfs-lines::after {
+                animation: line-rotate;
+                animation-fill-mode: forwards;
+            }
+
+            /* Stage 1 - Grow circle */
+            .hfs-circle {
+                animation-duration: 600ms;
+            }
+
+            /* Stage 2 - Draw line */
+            .hfs-lines::before {
+                animation-delay: 800ms;
+                animation-duration: 600ms;
+            }
+
+            /* Stage 3 - Rotate to fill */
+            .hfs-lines::after, .hfs-circle::before {
+                animation-delay: 1600ms;
+                animation-duration: 800ms;
+            }
+
+
+            @keyframes circle-grow {
+                0%     { transform: scale(0); }
+                100%   { transform: scale(1); }
+            }
+
+            @keyframes circle-fill {
+                0%     { transform: rotateZ(90deg); }
+                100%   { transform: rotateZ(45deg); }
+            }
+
+            @keyframes line-draw{
+                0%     { transform: scaleX(0); opacity: 1; }
+                100%   { transform: scale(1); opacity: 1; }
+            }
+
+            @keyframes line-rotate {
+                0%     { transform: rotateZ(0); opacity: 1; }
+                100%   { transform: rotateZ(-45deg); opacity: 1; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hfs-logo">
+            <div class="hfs-circle"></div>
+            <div class="hfs-lines"></div>
+        </div>
+    </body>
+</html>
